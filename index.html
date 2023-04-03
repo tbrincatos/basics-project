@@ -7,11 +7,7 @@
     <title>Malta</title>
     <style>
       body {
-        background: linear-gradient(
-          to right,
-          /*#c8eef0, #00b6b6 #416480*/ white,
-          #ca8988
-        );
+        background: linear-gradient(to right, white, #ca8988);
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
       }
@@ -94,6 +90,24 @@
         filter: contrast(150%);
         transform: scale(1.1);
       }
+
+      .dark {
+        background: linear-gradient(to right, #416480, white);
+      }
+
+      .dark button {
+        background: #416480;
+        border: 1px solid #416480;
+      }
+
+      .dark button:hover {
+        color: white;
+      }
+
+      .dark button a,
+      .dark button a:visited {
+        color: white;
+      }
     </style>
   </head>
   <body>
@@ -144,5 +158,14 @@
       Coded by
       <a href="https://maltisian.netlify.app" target="_blank">Tamsin Brincat</a>
     </footer>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+        body.classList.toggle("dark");
+      }
+
+      let themeButton = document.querySelector(".theme");
+      themeButton.addEventListener("click", changeTheme);
+    </script>
   </body>
 </html>
